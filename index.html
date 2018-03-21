@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2018 by zsobe31 (http://jsbin.com/tijiyo/1/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+<head>
+<meta name="description" content="list_element">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JQuery-tutorial-1</title>
+<style id="jsbin-css">
+body {
+  font-size: 20px;
+}
+li {
+  padding: 15px;
+  margin: 20px;
+  width: 100px;
+  border: 1px solid;
+  border-radius: 5px;
+  text-align: center;
+}
+.piros {
+  color: red;
+}
+.kek {
+  color: blue;
+}
+.zold {
+  color: green;
+}
+.feher {
+  color: white;
+  background: gray;
+}
+.fekete {
+  color: black;
+}
+.barna {
+  color: brown;
+}
+
+</style>
+</head>
+<body>
+  <ul class="list">
+    <li class="piros">Piros</li>
+    <li class="kek">Kék</li>
+    <li class="zold">Zöld</li>
+    <li class="feher">Fehér</li>
+    <li class="fekete">Fekete</li>
+    <li class="barna">Barna</li>
+  </ul>
+<script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+
+<script id="jsbin-javascript">
+$(function() {
+  $('li').on('click', function() {
+    $(this).prev().remove().addClass('feher');
+    $(this).next().addClass('feher');
+  })
+});
+
+
+</script>
+</body>
+</html>
