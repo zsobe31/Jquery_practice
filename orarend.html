@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2018 by zsobe31 (http://jsbin.com/bivuvup/1/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+<head>
+<meta name="description" content="tab-panel-1">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  
+  <title>tab-panels</title>
+<style id="jsbin-css">
+.tab-panels ul {
+  margin: 0;
+  padding: 0;
+}
+.tab-panels ul li {
+  list-style-type: none;
+  display: inline-block;
+  background: #999;
+  margin: 0;
+  padding: 3px 10px;
+  border-radius: 10px 10px 0 0;
+  color: #fff;
+  font-weight: 200;
+  cursor: pointer;
+}
+.tab-panels ul li:hover {
+  color: #fff;
+  background: #666;
+}
+.tab-panels ul li.active {
+  color: #fff;
+  background: #666;
+}
+.tab-panels .panel {
+  display: none;
+  background: lightgray;
+  padding: 30px;
+  border-radius: 0 0 30px 30px;
+}
+.tab-panels .panel.active {
+  display: block;
+}
+
+
+</style>
+</head>
+<body>
+  <h1>Órarend</h1>
+  <div class="tab-panels">
+    <ul class="tabs">
+      <li class="active" rel="panel1">Héthő</li>
+      <li rel="panel2">Kedd</li>
+      <li rel="panel3">Szerda</li>
+      <li rel="panel3">Csütörtök</li>
+      <li rel="panel4">Péntek</li>
+    </ul>
+    
+    <div id="panel1" class="panel active">
+      matematika<br>
+      testnevelés<br>
+      biológia<br>
+      történelem<br>
+      földrajz<br>
+    </div>
+    
+    <div id="panel2" class="panel">
+      testnevelés<br>
+      angol nyelv<br>
+      kémia<br>
+      magyar nyelv<br>
+      történelem<br>
+    </div>
+    
+    <div id="panel3" class="panel">
+      matematika<br>
+      angol nyelv<br>
+      testnevelés<br>
+      informatika<br>
+      irodalom<br>
+    </div>
+    
+    <div id="panel4" class="panel">
+      biológia<br>
+      magyar nyelv<br>
+      fizika<br>
+      testnevelés<br>
+      földrajz<br>
+    </div>
+    
+    <div id="panel5" class="panel">
+      matematika<br>
+      testnevelés<br>
+      informatika<br>
+      angol nyelv<br>
+      kémia<br>
+    </div>
+<script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+
+<script id="jsbin-javascript">
+$(function() {
+  $('.tab-panels .tabs li').on('click', function() {
+    $('.tab-panels .tabs li.active').removeClass('active');
+    $(this).addClass('active');
+
+    var panelToShow = $(this).attr('rel');
+
+    $('.tab-panels .panel.active').slideUp(500, function() {
+      $(this).removeClass('active');
+
+      $('#'+panelToShow).slideDown(500, function() {
+        $(this).addClass('active');
+      });
+    });
+  });
+});
+</script>
+</body>
+</html>
