@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2018 by zsobe31 (http://jsbin.com/ciyusay/1/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+<head>
+<meta name="description" content="kepnezo_sajat">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+<style id="jsbin-css">
+.album {
+  width: 720px;
+  height: 400px;
+  overflow: hidden;
+}
+.kepek {
+  display: block;
+  width: 6000px;
+  height: 400px;
+  margin: 0;
+  padding: 0;
+}
+.kep {
+  float: left;
+  list-style-type: none;
+  width: 720;
+  height: 400;
+}
+</style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="text-muted">Autómata képtár</h1>
+    <div class="album">
+      <ul class="kepek">
+        <li class="kep"><img src="https://www.azamaraclubcruises.com/sites/default/files/voyages/13_night_passage_east_voyage-720x400.jpg"></li>
+        <li class="kep"><img src="https://north.rewindfestival.com/wp-content/uploads/sites/3/2017/11/Rewind-Festival-South_2017_Gobinder-Jhitta-144GJ1_8969-Web-720x400.jpeg"></li>
+        <li class="kep"><img src="http://mercerareachamber.com/wp-content/uploads/2017/10/Hells-Hollow-Haunt-720x400.jpg"></li>
+        <li class="kep"><img src="https://www.nature.org/cs/groups/webcontent/@web/@newmexico/documents/media/santa-fe-canyon-chamisa-720x40.jpg"></li>
+        <li class="kep"><img src="https://www.azamaraclubcruises.com/sites/default/files/voyages/13_night_passage_east_voyage-720x400.jpg"></li>
+      </ul>
+    </div>
+  </div>
+  
+<script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+  
+  
+<script id="jsbin-javascript">
+$(function() {
+  var width = 720;
+  var animationSpeed = 1000;
+  var pause = 3000;
+  var currentKep = 1;
+  
+  var $album = $('.album');
+  var $kepContainer = $album.find('.kepek');
+  var $kepek = $kepContainer.find('.kep');
+  
+  setInterval(function() {
+    $kepContainer.animate({'margin-left': '-=' +width}, animationSpeed, function() {
+      currentKep++;
+      if (currentKep === $kepek.length) {
+        currentKep = 1;
+        $kepContainer.css('margin-left', 0);
+      }
+    });
+  }, pause);
+});
+
+
+
+</script>
+</body>
+</html>
